@@ -1,0 +1,43 @@
+var menuLinks = document.querySelectorAll('.menu .menu__link');
+
+for(var i=0; i<menuLinks.length;i++){
+	var menuLink=menuLinks[i];
+	var menuScrollItemId = menuLink.dataset.linkTarget;
+	var menuScrollItem=document.querySelector(menuScrollItemId);
+	menuLink.onclick = (
+		function(e){
+			var id = this.id;
+			e.preventDefault();
+			animateScroll(this, 1000, 'easeInOutQuint', 10, top, function(){
+				window.location.hash='#'+id;
+			})
+		}).bind(menuScrollItem);
+}
+
+
+var header = document.getElementById("header");
+var scrollBack = document.getElementById("scroll-back");
+
+scrollBack.onclick = (
+		function(e){
+			e.preventDefault();
+			animateScroll(this, 1000, 'easeInOutQuint', 10, top, function(){
+				window.location.hash="";
+			})
+		}).bind(header);
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+       if(!scrollBack.classList.contains('scroll-back_show')){
+       		scrollBack.classList.add('scroll-back_show');
+       }
+    } else {
+    	if(scrollBack.classList.contains('scroll-back_show')){
+       		scrollBack.classList.remove('scroll-back_show');
+       }
+    }
+}
+
+console.log('scroll elements initialized')

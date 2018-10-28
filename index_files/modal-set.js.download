@@ -1,0 +1,29 @@
+
+function toggleActive (element){	
+	element.classList.toggle('modal_active');
+	if(document.body.classList.contains('body_not-scrollable')){
+		document.body.classList.remove('body_not-scrollable');
+	}else{
+		document.body.classList.add('body_not-scrollable');
+	}
+}
+var modalButtons = document.querySelectorAll('.modal-open-button');
+for(var i=0; i<modalButtons.length;i++){
+	var modalButton = modalButtons[i];
+	var modalRoot = document.querySelector(modalButton.dataset.windowTarget);
+	var modalCloseOutside = modalRoot.querySelector('.modal__close-outside');
+	modalCloseOutside.onclick = function(e){
+		toggleActive(modalRoot);
+	}
+var modalCloseButton = modalRoot.querySelector('.modal__close-button');
+	modalCloseButton.onclick = function(e){
+	toggleActive(modalRoot);
+}
+modalButton.onclick = function(e){
+	toggleActive(modalRoot);
+}
+}
+
+
+
+console.log('modal windows initialized')

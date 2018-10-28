@@ -1,0 +1,54 @@
+var countDownDate = new Date("Dec 1, 2018 10:00:00").getTime();
+var distance = null;
+
+function setCountDownElements(days, hours, minutes){
+  var daysElement = document.getElementById('count-down-days');
+  var hoursElement = document.getElementById('count-down-hours');
+  var minutesElement = document.getElementById('count-down-minutes');
+  daysElement.textContent = days;
+  hoursElement.textContent = hours;
+  minutesElement.textContent = minutes;
+}
+
+function getDate(){
+   var now = new Date().getTime();
+
+    var distance = countDownDate - now;
+
+    if(distance <= 0){
+      return{
+        minutes: 0,
+        hours: 0,
+        days: 0,
+      }
+    }
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var stringValue = days + ' : ' + hours + ' : ' + minutes;
+    
+    return {
+      minutes: minutes,
+      hours: hours,
+      days: days,
+    }
+}
+
+function countDown() {
+ const date = getDate();
+ setCountDownElements(date.days, date.hours, date.minutes);
+}
+
+  
+
+countDown();
+
+var interval = setInterval(function() {
+    countDown();
+    if (distance < 0) {
+      clearInterval(interval);
+      // document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000*60);
+console.log('count down started')

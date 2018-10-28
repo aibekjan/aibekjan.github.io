@@ -1,0 +1,9 @@
+var shareLinks = document.querySelectorAll('.share-button')
+for(var i=0; i<shareLinks.length;i++){
+	var link = shareLinks[i];
+	link.onclick=(function(){
+		window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+		return false;
+	}).bind(link);
+}
+console.log('share windows initialized')

@@ -1,0 +1,49 @@
+var speakersList = document.querySelector('.speakers-list');
+var speakersSliderMount = document.getElementById('speakers-slider-mount');
+var children = speakersList.childNodes;
+
+for(var i=0; i<children.length; i++){
+  var child = children[i];
+  speakersSliderMount.append(child.cloneNode(true));
+}
+
+
+var playTimeout = 5000;
+var slider = tns({
+	container: '#speakers-slider-mount',
+	controls: false,
+	nav: false,
+	autoplay: true,
+	autoplayButtonOutput: false,
+	autoplayHoverPause: true,
+	arrowKeys: true,
+	mouseDrag: true,
+	items: 4,
+	autoHeigth: true,
+	animateDelay: 1000,
+	autoplayTimeout: 5000,
+	speed: 1000,
+	responsive: {
+      640: {
+        items: 2
+      },
+      850: {
+        items: 3
+      },
+      1100: {
+        items: 4
+      }
+    }
+});
+var timerId = undefined;
+document.querySelector("#speakers-slider-prev").onclick = (function() {
+    slider.goTo("prev");
+    slider.pause();
+    timerId = setTimeout(function() { if(timerId) {clearTimeout(timerId)} slider.play(); }, playTimeout);
+});
+document.querySelector("#speakers-slider-next").onclick = (function() {
+    slider.goTo("next");
+    slider.pause();
+     timerId = setTimeout(function() { if(timerId) {clearTimeout(timerId)} slider.play(); }, playTimeout);
+});
+console.log('run slider');

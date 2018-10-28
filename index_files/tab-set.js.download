@@ -1,0 +1,25 @@
+var tab = document.getElementById('codex-tab')
+var tabLinks = tab.querySelectorAll('.tab__link');
+
+
+for (var i=0;i<tabLinks.length; i++){
+	var tabLink = tabLinks[i];
+	tabLink.onclick = function(e){
+		var clickedLink = e.target;
+		if(!clickedLink.classList.contains('tab__link_active')){
+			var tabLinkActive = tab.querySelector('.tab__link.tab__link_active');
+			var tabContentActiveId = tabLinkActive.dataset.tabTarget;
+			var tabContentActive = document.querySelector(tabContentActiveId);
+			var tabContentId = clickedLink.dataset.tabTarget;
+			var tabContent = document.querySelector(tabContentId);
+			
+			if(!tabContent.classList.contains('tab-content_active')){
+				tabLinkActive.classList.remove('tab__link_active');
+				clickedLink.classList.add('tab__link_active');
+				tabContentActive.classList.remove('tab-content_active');
+				tabContent.classList.add('tab-content_active');
+			}
+		}
+	}
+}
+console.log('tab initialized');

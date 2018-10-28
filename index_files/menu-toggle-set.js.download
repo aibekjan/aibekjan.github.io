@@ -1,0 +1,12 @@
+var menuNav = document.querySelector('.menu-nav');
+var menuToggleButton = menuNav.querySelector('.menu-nav__toggle-button');
+var menuToggleIcon = menuToggleButton.querySelector('.icon-butterbrod');
+var menuList = menuNav.querySelector('.menu');
+
+menuToggleButton.onclick = function(){
+	menuToggleButton.classList.toggle('menu-nav__toggle-button_active');
+	menuToggleIcon.classList.toggle('icon-butterbrod_active');
+	menuList.classList.toggle('menu_active');
+}
+
+console.log('menu toggle initialized')
