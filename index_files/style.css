@@ -613,7 +613,7 @@ body{
      position: absolute;
 }
  .sponsors__block{
-     padding: 15px 0;
+     padding: 10px 0;
 }
  .organizers_block{
      background-color: #f6f6f6;
@@ -663,7 +663,7 @@ body{
      text-decoration: none;
 }
  .footer{
-     padding: 90px 0;
+     padding: 30px 0;
 }
  .feedback{
      line-height: 1.5rem;
