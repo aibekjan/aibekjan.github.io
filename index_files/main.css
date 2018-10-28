@@ -42,7 +42,7 @@ input.w-button{-webkit-appearance:button}html[data-w-dynpage] [data-w-cloak]{col
 .conteiner {
   position: relative;
   max-width: 1200px;
-  min-width: 360px;
+  min-width: 300px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 10px;
