@@ -237,7 +237,7 @@ body{
      transform: translate(-50%, 50%);
 }
  .block{
-     padding: 85px 0 40px;
+     padding: 45px 0 10px;
 }
  .block_flex{
      display: flex;
@@ -587,7 +587,7 @@ body{
  .sponsors{
      display: flex;
      justify-content: space-between;
-     padding: 60px 0 100px;
+     padding: 20px 0 20px;
      flex-direction: column;
 }
  .organizers{
@@ -597,7 +597,7 @@ body{
  .sponsors_subtitle{
      position: relative;
      margin: 0;
-     padding: 50px 0 40px;
+     padding: 10px 0 10px;
 }
  .sponsors_subtitle::after{
      background-image: url(../images/ic-circle-darker-yellow.svg);
