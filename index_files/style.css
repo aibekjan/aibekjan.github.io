@@ -716,6 +716,18 @@ body{
      font-size: 0;
      line-height: 1;
 }
+.share-button1{
+     display: block;
+     padding: 10px;
+     border-radius: 50%;
+     border: none;
+     color: #ffffff;
+     text-decoration: none;
+     background-color: #cccccc;
+     white-space: nowrap;
+     font-size: 0;
+     line-height: 1;
+}
  .share-button_blue{
      background-color: #3e5996;
 }
@@ -738,7 +750,12 @@ body{
      background: url(../images/ic-twitter.svg) 50% no-repeat;
 }
  .share-icon_google-plus{
-     background: url(../images/ic-wa.png) 50% no-repeat;
+     background-image: url(../images/ic-wa.svg);
+	 background-repeat: no-repeat;
+	 background-size: contain;
+	 background-position: center;
+	 width: 26px;
+     height: 26px;
      
 }
  .copyright{
