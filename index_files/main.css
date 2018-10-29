@@ -786,7 +786,7 @@ input.w-button{-webkit-appearance:button}html[data-w-dynpage] [data-w-cloak]{col
 .text-dolgnost {
   max-width: 260px;
   min-height: 56px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   margin-left: 205px;
   color: #7d8b9b;
   font-size: 13px;
@@ -800,6 +800,7 @@ input.w-button{-webkit-appearance:button}html[data-w-dynpage] [data-w-cloak]{col
 .text-teacher {
   min-height: 168px;
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .button-white-blue {
@@ -3976,8 +3977,8 @@ html.w-mod-js *[data-ix="block-botton-infopanel"] {
     max-height: 434px;
   }
   .item-teacher {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
   .image-teacher {
     display: block;
