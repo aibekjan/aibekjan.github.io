@@ -178,7 +178,7 @@ body{
  .header__description{
 	 color: #0000FF;
      font-size: 1.7rem;
-     font-weight: 700;
+     font-weight: 900;
      margin: 30px 0;
 }
  .button{
@@ -436,7 +436,7 @@ body{
 }
  .program-item{
      display: flex;
-     padding: 22px 0;
+     padding: 12px 0;
 }
  .program-item-single{
      display: flex;
